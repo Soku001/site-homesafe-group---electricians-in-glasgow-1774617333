@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Homesafe Group - Your trusted electricians in Glasgow. Specializing in Electrical Installations, Rewiring, Fault Finding, PAT Testing, EV Charger Installation, and Smart Home solutions. Professional, reliable, and modern electrical services for Glasgow homes and businesses.">
+    <title>Homesafe Group - Electricians in Glasgow | Expert Electrical Services</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* CSS Reset & Global Styles */
+        :root {
+            --primary-color: #1a1a2e;
+            --accent-color: #4a90d9;
+            --background-color: #f8f9fa;
+            --text-color-dark: #333;
+            --text-color-light: #fff;
+            --card-bg: #fff;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color-dark);
+            background-color: var(--background-color);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Inter', sans-serif;
+            color: var(--primary-color);
+            line-height: 1.2;
+            margin-bottom: 0.5em;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--accent-color);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--primary-color);
+        }
+
+        button, .button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--text-color-light);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-align: center;
+        }
+
+        button:hover, .button:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        section {
+            padding: 4rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .section-heading {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-heading::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: var(--primary-color);
+            color: var(--text-color-light);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px var(--shadow);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+
+        .logo {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--text-color-light);
+            display: flex;
+            align-items: center;
+            line-height: 1;
+        }
+        .logo span {
+            font-size: 0.8em;
+            font-weight: 400;
+            display: block;
+            opacity: 0.8;
+            margin-top: 2px;
+        }
+        .logo i {
+            margin-right: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--text-color-light);
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            left: 50%;
+            bottom: -5px;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--text-color-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 80vh; /* Adjust as needed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-color-light);
+            overflow: hidden;
+            background: linear-gradient(rgba(26, 26, 46, 0.7), rgba(26, 26, 46, 0.7)), url('https://source.unsplash.com/featured/1600x900/?Electrician,professional') no-repeat center center/cover;
+            /* Using linear-gradient for consistent overlay */
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(26, 26, 46, 0.6); /* Dark overlay */
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--text-color-light);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 20px var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card i {
+            font-size: 3.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary-color);
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .service-card .learn-more {
+            font-weight: 600;
+            color: var(--accent-color);
+            position: relative;
+            padding-bottom: 2px;
+        }
+        .service-card .learn-more::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        .service-card .learn-more:hover::after {
+            width: 100%;
+        }
+
+        /* About Section */
+        .about-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .about-image {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 8px 30px var(--shadow);
+            order: -1; /* Image first on mobile */
+        }
+
+        .about-content {
+            text-align: center;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        /* Reviews Section */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .review-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px var(--shadow);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .review-card .stars {
+            color: gold;
+            margin-bottom: 1rem;
+        }
+
+        .review-card p {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: #555;
+            flex-grow: 1;
+        }
+
+        .review-card .reviewer-name {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-top: 1rem;
+        }
+
+        /* New Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-item {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 15px var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .feature-item i {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+
+        .feature-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary-color);
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        /* Contact Section */
+        .contact-content {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px var(--shadow);
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        .contact-info p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .contact-info i {
+            color: var(--accent-color);
+            margin-right: 0.8rem;
+            font-size: 1.2em;
+        }
+
+        .contact-form {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px var(--shadow);
+        }
+
+        .contact-form h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1rem;
+            color: var(--text-color-dark);
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-form button {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--primary-color);
+            color: var(--text-color-light);
+            padding: 4rem 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .footer .container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .footer-logo {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--text-color-light);
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+        .footer-logo span {
+            font-size: 0.8em;
+            font-weight: 400;
+            display: block;
+            opacity: 0.8;
+            margin-top: 2px;
+        }
+        .footer-logo i {
+            margin-right: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        .footer-nav ul, .footer-services ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-nav li, .footer-services li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-nav a, .footer-services span {
+            color: rgba(255, 255, 255, 0.8);
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-services h4, .footer-contact h4 {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-contact p {
+            margin-bottom: 0.8rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-contact i {
+            margin-right: 0.5rem;
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            color: var(--text-color-light);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* Mobile Responsiveness */
+        @media (min-width: 768px) {
+            .navbar .container {
+                flex-wrap: nowrap;
+            }
+
+            .about-section {
+                flex-direction: row;
+                text-align: left;
+            }
+
+            .about-image {
+                flex: 1;
+                max-width: 50%;
+                order: unset; /* Revert order on larger screens */
+            }
+
+            .about-content {
+                flex: 1;
+                padding-left: 3rem;
+                text-align: left;
+            }
+
+            .contact-content {
+                flex-direction: row;
+            }
+            .contact-info, .contact-form {
+                flex: 1;
+            }
+            .contact-info {
+                padding-right: 1.5rem;
+            }
+            .contact-form {
+                padding-left: 1.5rem;
+            }
+
+            .footer .container {
+                flex-direction: row;
+                justify-content: space-around;
+                text-align: left;
+            }
+            .footer-nav ul, .footer-services ul {
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .navbar .container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+                display: none; /* Hidden by default */
+                background-color: var(--primary-color);
+                padding-top: 1rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 0.5rem 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 0.5rem 0;
+            }
+
+            .hamburger {
+                display: block;
+                position: absolute;
+                top: 1.2rem;
+                right: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-heading {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .footer-logo, .footer-nav, .footer-services, .footer-contact {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sticky Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#home" class="logo"><i class="fa-solid fa-bolt"></i>Homesafe Group<span>Electricians in Glasgow</span></a>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-content">
+            <h1>Your Trusted & Certified Electricians in Glasgow</h1>
+            <p>Homesafe Group delivers premium, reliable electrical solutions across Glasgow, ensuring safety, efficiency, and peace of mind for your home or business.</p>
+            <a href="#contact" class="button">Book a Free Consultation</a>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="services" class="text-center">
+        <h2 class="section-heading">Our Expert Electrical Services</h2>
+        <p>From essential wiring to advanced smart home solutions, Homesafe Group provides comprehensive electrical services tailored to your needs.</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fa-solid fa-bolt"></i>
+                <h3>Electrical Installations</h3>
+                <p>Ensure your new electrical systems are installed safely and efficiently by certified professionals, meeting all regulations.</p>
+                <a href="#contact" class="learn-more">Learn More</a>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                <h3>Rewiring</h3>
+                <p>Modernize your property's electrical infrastructure for enhanced safety and performance, preventing potential hazards.</p>
+                <a href="#contact" class="learn-more">Learn More</a>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <h3>Fault Finding</h3>
+                <p>Quickly identify and resolve complex electrical issues to restore power and prevent further damage or safety risks.</p>
+                <a href="#contact" class="learn-more">Learn More</a>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-plug"></i>
+                <h3>PAT Testing</h3>
+                <p>Maintain electrical appliance safety and compliance in your workplace or property with thorough Portable Appliance Testing.</p>
+                <a href="#contact" class="learn-more">Learn More</a>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-charging-station"></i>
+                <h3>EV Charger Installation</h3>
+                <p>Future-proof your home with convenient and safe electric vehicle charging point installation by our accredited team.</p>
+                <a href="#contact" class="learn-more">Learn More</a>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-house-user"></i>
+                <h3>Smart Home</h3>
+                <p>Transform your living space with intelligent electrical systems for enhanced comfort, security, and energy efficiency.</p>
+                <a href="#contact" class="learn-more">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="container">
+        <h2 class="section-heading text-center">About Homesafe Group Electricians in Glasgow</h2>
+        <div class="about-section">
+            <img src="https://source.unsplash.com/featured/900x600/?Electrician,team" alt="Homesafe Group Electrician Team" class="about-image">
+            <div class="about-content">
+                <p>Homesafe Group is a leading team of professional, highly-skilled electricians proudly serving the Glasgow area. Located at 300 Bath St, Glasgow G2 4JR, United Kingdom, we are committed to delivering top-tier electrical services for both residential and commercial clients.</p>
+                <p>Our reputation is built on trust, reliability, and an unwavering commitment to safety and quality. We understand the critical importance of a well-functioning and safe electrical system, which is why our certified electricians bring expertise to every project, big or small. From intricate Electrical Installations to essential Rewiring, meticulous Fault Finding, crucial PAT Testing, cutting-edge EV Charger Installation, and innovative Smart Home solutions, we cover all your electrical needs with precision and care.</p>
+                <p>At Homesafe Group, we strive to exceed expectations, ensuring every customer in Glasgow receives efficient, transparent, and professional service. Your safety and satisfaction are our highest priorities.</p>
+                <a href="#contact" class="button">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="text-center">
+        <h2 class="section-heading">What Our Clients in Glasgow Say</h2>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p>"Homesafe Group provided an excellent EV Charger Installation at my home near Bath St, Glasgow. The team was punctual, highly professional, and ensured everything was perfect. Fantastic service!"</p>
+                <span class="reviewer-name">- Sarah M., Glasgow West End</span>
+            </div>
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p>"We had an urgent Fault Finding issue at our office in Glasgow city centre. Homesafe Group responded incredibly fast, identified the problem quickly, and carried out the repair with minimal disruption. Very impressed!"</p>
+                <span class="reviewer-name">- David L., City Centre Business</span>
+            </div>
+            <div class="review-card">
+                <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p>"Our house in Glasgow was due for Rewiring, and Homesafe Group handled it brilliantly. Professional, tidy, and explained every step. The peace of mind is invaluable. Highly recommend their Electrical Installations too."</p>
+                <span class="reviewer-name">- Emma P., Southside Glasgow</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Features Section -->
+    <section id="features" class="text-center">
+        <h2 class="section-heading">Now Available: Enhanced Client Experience Features</h2>
+        <p>At Homesafe Group, we're constantly innovating to provide you with the best service possible.</p>
+        <div class="features-grid">
+            <div class="feature-item">
+                <i class="fa-solid fa-comments"></i>
+                <h3>Live Chat</h3>
+                <p>Get instant answers to your questions and support, available 24/7 directly on our website.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-calendar-check"></i>
+                <h3>Online Booking</h3>
+                <p>Schedule your electrical services at your convenience, book directly without needing to call us.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-robot"></i>
+                <h3>AI Assistant</h3>
+                <p>Our intelligent AI assistant is ready to help, providing immediate answers to common questions automatically.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-solid fa-microphone-lines"></i>
+                <h3>AI Voice Agent</h3>
+                <p>Every call to Homesafe Group is answered by our AI Voice Agent, ensuring you never miss a connection, day or night.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-brands fa-whatsapp"></i>
+                <h3>WhatsApp Integration</h3>
+                <p>Connect with us instantly on WhatsApp for quick replies and seamless communication.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa-brands fa-google"></i>
+                <h3>Live Google Reviews</h3>
+                <p>See our most recent client feedback updated automatically on our site, reflecting our ongoing commitment to excellence.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="text-center">
+        <h2 class="section-heading">Get In Touch With Homesafe Group</h2>
+        <p>Contact us today for professional electrical services in Glasgow. We're here to help.</p>
+        <div class="contact-content container">
+            <div class="contact-info">
+                <h3>Contact Details</h3>
+                <p><i class="fa-solid fa-phone"></i>Phone: <a href="tel:+448005999793">+44 800 599 9793</a></p>
+                <p><i class="fa-solid fa-envelope"></i>Email: <a href="mailto:enquiries@homesafegroup.co.uk">enquiries@homesafegroup.co.uk</a></p>
+                <p><i class="fa-solid fa-location-dot"></i>Address: 300 Bath St, Glasgow G2 4JR, United Kingdom</p>
+            </div>
+            <div class="contact-form">
+                <h3>Send Us an Enquiry</h3>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service of Interest</label>
+                        <select id="service" name="service">
+                            <option value="">Select a Service</option>
+                            <option value="Electrical Installations">Electrical Installations</option>
+                            <option value="Rewiring">Rewiring</option>
+                            <option value="Fault Finding">Fault Finding</option>
+                            <option value="PAT Testing">PAT Testing</option>
+                            <option value="EV Charger Installation">EV Charger Installation</option>
+                            <option value="Smart Home">Smart Home</option>
+                            <option value="General Enquiry">General Enquiry</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-block footer-logo">
+                <a href="#home" class="footer-logo"><i class="fa-solid fa-bolt"></i>Homesafe Group<span>Electricians in Glasgow</span></a>
+            </div>
+            <div class="footer-block footer-nav">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#reviews">Reviews</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-block footer-services">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><span>Electrical Installations</span></li>
+                    <li><span>Rewiring</span></li>
+                    <li><span>Fault Finding</span></li>
+                    <li><span>PAT Testing</span></li>
+                    <li><span>EV Charger Installation</span></li>
+                    <li><span>Smart Home</span></li>
+                </ul>
+            </div>
+            <div class="footer-block footer-contact">
+                <h4>Contact Us</h4>
+                <p><i class="fa-solid fa-phone"></i>+44 800 599 9793</p>
+                <p><i class="fa-solid fa-envelope"></i>enquiries@homesafegroup.co.uk</p>
+                <p><i class="fa-solid fa-location-dot"></i>300 Bath St, Glasgow G2 4JR, United Kingdom</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Homesafe Group - Electricians in Glasgow. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/448005999793" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('navLinks');
+
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            // Smooth scroll for internal links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active'); // Close menu on link click for mobile
+                    }
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
